@@ -82,13 +82,7 @@ span.psw {
   }
 }
 </style>
-
-
-
 <body>
-
-
-
 <form action="" method="post">
   <center><h2>Đăng nhập</h2></center>
 
