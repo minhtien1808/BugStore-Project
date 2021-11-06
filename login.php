@@ -20,24 +20,27 @@ body {font-family: Arial, Helvetica, sans-serif;}
 form {border: 3px solid #f1f1f1;}
 
 input[type=text], input[type=password] {
-  width: 100%;
+  width: 450px;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+
 }
 
 button {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
-  margin: 8px 0;
+  margin: 15px 120px;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 455px;
+  position: relative;
+  left:26%;
+  transform:translateX(-50%);
 }
-
 button:hover {
   opacity: 0.8;
 }
@@ -45,7 +48,7 @@ button:hover {
 .cancelbtn {
   width: auto;
   padding: 10px 18px;
-  background-color: #f44336;
+  background-color: #f44337;
 }
 
 .imgcontainer {
@@ -60,13 +63,14 @@ img.avatar {
 
 .container {
   padding: 16px;
+  text-align: center;
+ 
 }
 
 span.psw {
   float: right;
   padding-top: 16px;
 }
-
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
@@ -78,27 +82,22 @@ span.psw {
   }
 }
 </style>
-
-
-
 <body>
-
-
-
 <form action="" method="post">
   <center><h2>Đăng nhập</h2></center>
 
   <div class="container">
     <label for="uname"><b>Tài khoản</b></label>
-    <input type="text" placeholder="Enter Username" name="username" required>
-
-    <label for="psw"><b>Mật khẩu</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+    <input class="userc" type="text" placeholder="Enter Username" name="username" required">
+<br>
+    <label for="psw"><b>Mật khẩu  </b></label>
+    <input class="pswc" type="password" placeholder="Enter Password" name="password" required>
      <?php  
           if(isset($loginCus)){
                         echo $loginCus;
                     }
-        ?>   
+        ?>  
+        <br> 
         <button type="submit" name="login">Login</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Lưu tài khoản
