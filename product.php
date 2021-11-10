@@ -37,7 +37,7 @@
                                 </div> -->
 
                                 <input type="text" name="namepro" placeholder="What do yo u need?">
-                                <button type="" class="site-btn">Tìm Kiếm</button>
+                                <button type="" class="site-btn">Tìm kiếm</button>
 
                             </form>
                     </div>
