@@ -63,7 +63,6 @@ if (!isset($_GET['id'])) {
         background-color: #3e8e41;
         box-shadow: 0 5px #666;
         transform: translateY(4px);
-<<<<<<< HEAD
 
     }
 
@@ -86,17 +85,17 @@ if (!isset($_GET['id'])) {
             <div class="col-lg-3">
 
 
-    }
+                }
 
-    input.styling {
-        background-color: #7FAD39;
-        border: none;
-        color: white;
-        padding: 7px 12px;
-        text-decoration: none;
-        margin: 4px 2px;
-        cursor: pointer;
-    }
+                input.styling {
+                background-color: #7FAD39;
+                border: none;
+                color: white;
+                padding: 7px 12px;
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+                }
 
             </div>
             <div class="col-lg-9">
