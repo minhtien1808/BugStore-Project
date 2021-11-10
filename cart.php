@@ -1,6 +1,6 @@
 <?php ob_start();
 include 'inc/header.php';
-
+// add cart
 ?>
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['discount'])) {
@@ -123,7 +123,7 @@ if (!isset($_GET['id'])) {
                 <div class="breadcrumb__text">
                     <h2>Shopping Cart</h2>
                     <div class="breadcrumb__option">
-                        <a href="./index.html">Home</a>
+                        <a href="./index.php">Home</a>
                         <span>Shopping Cart</span>
                     </div>
                 </div>
@@ -250,10 +250,10 @@ if (!isset($_GET['id'])) {
                                     <li>Discount (<?php echo $result['code'] ?>)
 
                                         <span><?php echo $result['discount'] . "%" ?>(<?php
-                                                                                    $a = ($result['discount'] * $sub_total) / 100;
-                                                                                    echo '$' . $fm->format_currency($a);
+                                                                                        $a = ($result['discount'] * $sub_total) / 100;
+                                                                                        echo '$' . $fm->format_currency($a);
 
-                                                                                    ?>)</span>
+                                                                                        ?>)</span>
                                         <?php
                                         if ($result['code'] != "") {
 
