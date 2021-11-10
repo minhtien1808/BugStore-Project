@@ -184,6 +184,7 @@ if (!isset($_GET['id'])) {
                                                     </div>
 
                                                 </div>
+                                                // update price
                                                 <input class="styling" type="submit" name="submitupdate" value="Update" />
                                             </form>
                                         </td>
