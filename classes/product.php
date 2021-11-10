@@ -80,7 +80,7 @@
 			return $result;
 		}
 		
-
+		//Update_product
 		public function update_product($data,$files, $productName){
 			
 			$productName = mysqli_real_escape_string($this->db->link, $data['productName']);
