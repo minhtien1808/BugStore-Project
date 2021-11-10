@@ -21,6 +21,7 @@
 			$this->db = new Database();
 			$this->fm = new Format();
 		}
+		//Add product
 		public function insert_product($data,$files){
 
 			// $prodName = $this->fm->validation($prodName);
