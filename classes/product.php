@@ -141,6 +141,7 @@
 			
 			
 		}
+		//Delete product
 		public function delete_product($id){
 			$query = "DELETE  FROM tbl_product WHERE productId = '$id' ";
 			$result = $this->db->delete($query);
