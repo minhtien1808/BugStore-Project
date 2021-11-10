@@ -8,9 +8,8 @@ include('includes/navbar.php');
 <?php 
   $admin = new admin();
   $check = Session::get('level');
+  //Add admin
   if($_SERVER['REQUEST_METHOD'] == 'POST'  && isset($_POST['registerbtn'])  ){
-
-       
 
         $insertadmin = $admin->insert_Admin($_POST);
     }
