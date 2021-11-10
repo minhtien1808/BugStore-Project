@@ -2689,10 +2689,10 @@ ol {
 }
 
 .footer__widget form button {
-	position: absolute;
+	left: 83%;
 	right: 0;
 	top: 0;
-	padding: 0 26px;
+	padding: 10px 30px;
 	height: 100%;
 }
 
