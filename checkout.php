@@ -1,4 +1,4 @@
-// check out oder cart
+<!-- check out oder cart -->
 <?php ob_start();
 include 'inc/header.php';
 ?>

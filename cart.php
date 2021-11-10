@@ -80,7 +80,7 @@ if (!isset($_GET['id'])) {
     }
 </style>
 
-   
+
 <!-- Header Section End -->
 
 <!-- Hero Section Begin -->
@@ -183,7 +183,7 @@ if (!isset($_GET['id'])) {
                                         <td class="shoping__cart__quantity">
 
 
-                                            // edit number cart products
+                                            <!-- edit number cart products -->
 
                                             <form action="" method="post">
                                                 <div class="quantity">
@@ -196,7 +196,7 @@ if (!isset($_GET['id'])) {
                                                 </div>
 
 
-                                                // update price
+                                                <!-- update price -->
 
                                                 <input class="styling" type="submit" name="submitupdate" value="Update" />
                                             </form>
@@ -210,7 +210,7 @@ if (!isset($_GET['id'])) {
                                         </td>
 
 
-                                        // delete cart
+                                        <!-- delete cart -->
                                         <td class="shoping__cart__item__close">
                                             <!-- <span class="icon_close"></span> -->
                                         <td><a onclick="return confirm('Bạn có muốn xóa?')" href="?delid=<?php echo $result['cartId'] ?>">X</a></td>
