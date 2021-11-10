@@ -24,8 +24,6 @@
 			$this->db = new Database();
 			$this->fm = new Format();
 		}
-		
-
 		public function get_Info($admin_User){
 			
 			$query = "SELECT * FROM tbl_admin WHERE admin_User = '$admin_User'";
@@ -43,16 +41,6 @@
 			return $result;
 		}
 		public function insert_Admin($data){
-			// $name = $this->fm->validation($name);
-			// $username = $this->fm->validation($username);
-			// $password = $this->fm->validation($password);
-			// $email = $this->fm->validation($email);
-			// $phone = $this->fm->validation($phone);
-			// $city = $this->fm->validation($city);
-			// $district = $this->fm->validation($district);
-			// $address = $this->fm->validation($address);
-
-
 			$name = mysqli_real_escape_string($this->db->link, $data['name']);
 			$username = mysqli_real_escape_string($this->db->link, $data['username']);
 			$password = mysqli_real_escape_string($this->db->link, md5($data['password']));
@@ -81,17 +69,22 @@
 							$alert = "<span>Lỗi. Đăng ký người dùng thất bại</span>";
 							return $alert;	
 						}
-				
 					}
 				}else
 				{
 					$alert = "<span>Mật khẩu không khớp</span>";
 						return $alert;
 				}
-				
-
 			}
 		}
+		// $name = $this->fm->validation($name);
+			// $username = $this->fm->validation($username);
+			// $password = $this->fm->validation($password);
+			// $email = $this->fm->validation($email);
+			// $phone = $this->fm->validation($phone);
+			// $city = $this->fm->validation($city);
+			// $district = $this->fm->validation($district);
+			// $address = $this->fm->validation($address);
 		public function delete_Admin($id){
 			$query = "DELETE  FROM tbl_admin WHERE admin_User = '$id' ";
 			$result = $this->db->delete($query);
