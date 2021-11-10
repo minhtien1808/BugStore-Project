@@ -21,6 +21,7 @@
 			$this->db = new Database();
 			$this->fm = new Format();
 		}
+		//Add product
 		public function insert_product($data,$files){
 
 			// $prodName = $this->fm->validation($prodName);
@@ -80,7 +81,7 @@
 			return $result;
 		}
 		
-
+		//Update_product
 		public function update_product($data,$files, $productName){
 			
 			$productName = mysqli_real_escape_string($this->db->link, $data['productName']);
