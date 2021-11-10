@@ -1,4 +1,3 @@
-<!-- check out oder cart -->
 <?php ob_start();
 include 'inc/header.php';
 ?>
@@ -95,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_buy'])) {
                 <div class="breadcrumb__text">
                     <h2>Thanh toán</h2>
                     <div class="breadcrumb__option">
-                        <a href="./index.php">Trang chủ</a>
+                        <a href="./index.html">Trang chủ</a>
                         <span>Thanh toán</span>
                     </div>
                 </div>

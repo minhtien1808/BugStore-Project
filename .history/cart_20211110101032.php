@@ -1,7 +1,6 @@
 <?php ob_start();
 include 'inc/header.php';
 // add cart
-
 ?>
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['discount'])) {
@@ -56,7 +55,6 @@ if (!isset($_GET['id'])) {
         border-radius: 15px;
     }
 
-
     button.stylinggg:hover {
         background-color: #3e8e41
     }
@@ -76,11 +74,8 @@ if (!isset($_GET['id'])) {
         text-decoration: none;
         margin: 4px 2px;
         cursor: pointer;
-
     }
 </style>
-
-
 <!-- Header Section End -->
 
 <!-- Hero Section Begin -->
@@ -129,8 +124,6 @@ if (!isset($_GET['id'])) {
                     <h2>Shopping Cart</h2>
                     <div class="breadcrumb__option">
                         <a href="./index.php">Home</a>
-
-
                         <span>Shopping Cart</span>
                     </div>
                 </div>
@@ -181,10 +174,6 @@ if (!isset($_GET['id'])) {
                                             <?php echo $result['size'] ?>
                                         </td>
                                         <td class="shoping__cart__quantity">
-
-
-                                            <!-- edit number cart products -->
-
                                             <form action="" method="post">
                                                 <div class="quantity">
                                                     <div class="pro-qty">
@@ -194,10 +183,6 @@ if (!isset($_GET['id'])) {
                                                     </div>
 
                                                 </div>
-
-
-                                                <!-- update price -->
-
                                                 <input class="styling" type="submit" name="submitupdate" value="Update" />
                                             </form>
                                         </td>
@@ -208,9 +193,6 @@ if (!isset($_GET['id'])) {
                                             $sl += $result['quantity'];
                                             ?>
                                         </td>
-
-
-                                        <!-- delete cart -->
                                         <td class="shoping__cart__item__close">
                                             <!-- <span class="icon_close"></span> -->
                                         <td><a onclick="return confirm('Bạn có muốn xóa?')" href="?delid=<?php echo $result['cartId'] ?>">X</a></td>

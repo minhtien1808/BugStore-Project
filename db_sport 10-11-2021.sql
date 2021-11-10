@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th10 30, 2021 lúc 06:29 AM
--- Phiên bản máy phục vụ: 10.4.10-MariaDB
--- Phiên bản PHP: 7.3.12
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th10 10, 2021 lúc 04:49 AM
+-- Phiên bản máy phục vụ: 10.4.21-MariaDB
+-- Phiên bản PHP: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -28,14 +27,12 @@ SET time_zone = "+00:00";
 -- Cấu trúc bảng cho bảng `tbl_admin`
 --
 
-DROP TABLE IF EXISTS `tbl_admin`;
-CREATE TABLE IF NOT EXISTS `tbl_admin` (
+CREATE TABLE `tbl_admin` (
   `admin_User` varchar(255) NOT NULL,
   `admin_Name` varchar(255) NOT NULL,
   `admin_Email` varchar(255) NOT NULL,
   `admin_Pass` varchar(255) NOT NULL,
-  `level` int(11) NOT NULL,
-  PRIMARY KEY (`admin_User`) USING BTREE
+  `level` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -52,12 +49,10 @@ INSERT INTO `tbl_admin` (`admin_User`, `admin_Name`, `admin_Email`, `admin_Pass`
 -- Cấu trúc bảng cho bảng `tbl_brand`
 --
 
-DROP TABLE IF EXISTS `tbl_brand`;
-CREATE TABLE IF NOT EXISTS `tbl_brand` (
-  `brandId` int(11) NOT NULL AUTO_INCREMENT,
-  `brandName` varchar(255) NOT NULL,
-  PRIMARY KEY (`brandId`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+CREATE TABLE `tbl_brand` (
+  `brandId` int(11) NOT NULL,
+  `brandName` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_brand`
@@ -78,17 +73,15 @@ INSERT INTO `tbl_brand` (`brandId`, `brandName`) VALUES
 -- Cấu trúc bảng cho bảng `tbl_cart`
 --
 
-DROP TABLE IF EXISTS `tbl_cart`;
-CREATE TABLE IF NOT EXISTS `tbl_cart` (
-  `cartId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_cart` (
+  `cartId` int(11) NOT NULL,
   `productName` varchar(255) NOT NULL,
   `ssId` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
   `size` varchar(20) NOT NULL,
   `quantity` int(11) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  PRIMARY KEY (`cartId`)
-) ENGINE=InnoDB AUTO_INCREMENT=216 DEFAULT CHARSET=utf8;
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_cart`
@@ -100,7 +93,11 @@ INSERT INTO `tbl_cart` (`cartId`, `productName`, `ssId`, `price`, `size`, `quant
 (194, 'Converse Chuck Taylor All Star VLTG - Back To Earth - 567046V', '2v31j7flp508afsat0bfb1kpir', 1280000, '38', 1, '9d5064dc07.jpg'),
 (195, 'Vans UA Sport Suede - VN0A4BU6XW3', '2v31j7flp508afsat0bfb1kpir', 160, '35', 15, '2d391f7fc9.jpg'),
 (212, 'PRIMEBLUE ULTRABOOST 20', 'psebnmap26fkur5oi8mdns309p', 220, '41', 1, 'f02eca4501.jpg'),
-(215, 'STAN SMITH DARK BLUE', 'v1na6migiffv7qli6vdr78ptbo', 80, '39', 1, 'd77e545430.jpg');
+(215, 'STAN SMITH DARK BLUE', 'v1na6migiffv7qli6vdr78ptbo', 80, '39', 1, 'd77e545430.jpg'),
+(216, 'Men’s SPORT Crew Neck Ultra Dry T-shirt', '5027k54kfk62h350rrk9kikn8i', 36, 'L', 1, '3070301b97.png'),
+(220, 'PRIMEBLUE ULTRABOOST 20', '8ak23j8v0h3qmp4ur3o3i3ldub', 220, '41', 1, 'f02eca4501.jpg'),
+(221, 'PRIMEBLUE ULTRABOOST 20', '4tmc9cde5fn25qp6kjmmo35o94', 220, '41', 2, 'f02eca4501.jpg'),
+(222, 'T-Clip Leather Sneakers', '4tmc9cde5fn25qp6kjmmo35o94', 77, '35', 1, 'dd6e2cca70.png');
 
 -- --------------------------------------------------------
 
@@ -108,13 +105,11 @@ INSERT INTO `tbl_cart` (`cartId`, `productName`, `ssId`, `price`, `size`, `quant
 -- Cấu trúc bảng cho bảng `tbl_category`
 --
 
-DROP TABLE IF EXISTS `tbl_category`;
-CREATE TABLE IF NOT EXISTS `tbl_category` (
-  `catId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_category` (
+  `catId` int(11) NOT NULL,
   `catName` varchar(255) NOT NULL,
-  `catSize` varchar(255) NOT NULL,
-  PRIMARY KEY (`catId`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+  `catSize` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_category`
@@ -153,15 +148,13 @@ INSERT INTO `tbl_category` (`catId`, `catName`, `catSize`) VALUES
 -- Cấu trúc bảng cho bảng `tbl_customer`
 --
 
-DROP TABLE IF EXISTS `tbl_customer`;
-CREATE TABLE IF NOT EXISTS `tbl_customer` (
+CREATE TABLE `tbl_customer` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `nameCus` varchar(255) NOT NULL,
   `emailCus` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
-  `phone` int(11) NOT NULL,
-  PRIMARY KEY (`username`)
+  `phone` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -171,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `tbl_customer` (
 INSERT INTO `tbl_customer` (`username`, `password`, `nameCus`, `emailCus`, `address`, `phone`) VALUES
 ('a', '0cc175b9c0f1b6a831c399e269772661', 'a', '1', '1', 1),
 ('ltht1999', 'c4ca4238a0b923820dcc509a6f75849b', 'Trần Quốc Huy', 'ltht1999@gmail.com', '365 Phạm Hữu Lầu, Phường Phú Mỹ, Quận 7, TP. Hồ Chí Minh', 337865781),
-('test1', '25f9e794323b453885f5181f1b624d0b', 'Nguyá»…n Minh Tiáº¿n', 'nguyenminhtien1808@gmail.com', 'Há»“ ChÃ­ Minh', 982304759);
+('test1', '25f9e794323b453885f5181f1b624d0b', 'Nguyễn Minh Tiến', 'nguyenminhtien1808@gmail.com', 'Hồ Chí Minh', 982304759);
 
 -- --------------------------------------------------------
 
@@ -179,13 +172,11 @@ INSERT INTO `tbl_customer` (`username`, `password`, `nameCus`, `emailCus`, `addr
 -- Cấu trúc bảng cho bảng `tbl_discount`
 --
 
-DROP TABLE IF EXISTS `tbl_discount`;
-CREATE TABLE IF NOT EXISTS `tbl_discount` (
-  `id_discount` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_discount` (
+  `id_discount` int(11) NOT NULL,
   `code` varchar(255) NOT NULL,
-  `discount` int(11) NOT NULL,
-  PRIMARY KEY (`id_discount`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  `discount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_discount`
@@ -201,13 +192,11 @@ INSERT INTO `tbl_discount` (`id_discount`, `code`, `discount`) VALUES
 -- Cấu trúc bảng cho bảng `tbl_imgthumb`
 --
 
-DROP TABLE IF EXISTS `tbl_imgthumb`;
-CREATE TABLE IF NOT EXISTS `tbl_imgthumb` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_imgthumb` (
+  `id` int(11) NOT NULL,
   `imgthumb` varchar(255) NOT NULL,
-  `product` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  `product` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_imgthumb`
@@ -222,9 +211,8 @@ INSERT INTO `tbl_imgthumb` (`id`, `imgthumb`, `product`) VALUES
 -- Cấu trúc bảng cho bảng `tbl_order`
 --
 
-DROP TABLE IF EXISTS `tbl_order`;
-CREATE TABLE IF NOT EXISTS `tbl_order` (
-  `order_Id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_order` (
+  `order_Id` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp(),
   `buyer` varchar(255) NOT NULL,
   `receiver` varchar(255) NOT NULL,
@@ -232,9 +220,8 @@ CREATE TABLE IF NOT EXISTS `tbl_order` (
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `totalprice` bigint(20) NOT NULL,
-  `status` varchar(10) NOT NULL,
-  PRIMARY KEY (`order_Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8;
+  `status` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_order`
@@ -261,7 +248,9 @@ INSERT INTO `tbl_order` (`order_Id`, `date`, `buyer`, `receiver`, `phone`, `emai
 (111, '2021-06-08 07:03:11', 'ltht1999', 'Ngô Văn Khả', 337865781, 'ltht1999@gmail.com', '365 Phạm Hữu Lầu, Phường Phú Mỹ, Quận 7, TP. Hồ Chí Minh', 120, '0'),
 (112, '2021-09-12 02:44:05', 'ltht1999', 'Trần Huy Quốc', 337865781, 'ltht1999@gmail.com', '365 Phạm Hữu Lầu, Phường Phú Mỹ, Quận 7, TP. Hồ Chí Minh', 36, '0'),
 (113, '2021-09-12 04:57:36', 'ltht1999', 'Lê Quốc Đạt', 337865781, 'ltht1999@gmail.com', '365 Phạm Hữu Lầu, Phường Phú Mỹ, Quận 7, TP. Hồ Chí Minh', 36, '0'),
-(114, '2021-10-13 11:52:30', 'test1', 'Nguyá»…n Minh Tiáº¿n', 982304759, 'nguyenminhtien1808@gmail.com', 'Há»“ ChÃ­ Minh', 165, '0');
+(115, '2021-11-09 09:52:11', 'test1', 'Nguyễn Minh Tiến', 982304759, 'nguyenminhtien1808@gmail.com', 'Hồ Chí Minh', 100, '0'),
+(116, '2021-11-09 09:57:37', 'test1', 'Nguyễn Minh Tiến', 982304759, 'nguyenminhtien1808@gmail.com', 'Hồ Chí Minh', 80, '0'),
+(117, '2021-11-09 09:59:09', 'test1', 'Nguyễn Minh Tiến', 982304759, 'nguyenminhtien1808@gmail.com', 'Hồ Chí Minh', 36, '0');
 
 -- --------------------------------------------------------
 
@@ -269,18 +258,15 @@ INSERT INTO `tbl_order` (`order_Id`, `date`, `buyer`, `receiver`, `phone`, `emai
 -- Cấu trúc bảng cho bảng `tbl_orderdetails`
 --
 
-DROP TABLE IF EXISTS `tbl_orderdetails`;
-CREATE TABLE IF NOT EXISTS `tbl_orderdetails` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_orderdetails` (
+  `id` int(11) NOT NULL,
   `id_order` int(11) NOT NULL,
   `productName` varchar(255) NOT NULL,
   `size` varchar(20) NOT NULL,
   `quantity` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `price` bigint(20) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id_order` (`id_order`)
-) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8;
+  `price` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_orderdetails`
@@ -309,19 +295,18 @@ INSERT INTO `tbl_orderdetails` (`id`, `id_order`, `productName`, `size`, `quanti
 (85, 111, 'Nike Air Force 1 All White', '38', 1, '85ec88ab11.jpg', 120),
 (86, 112, 'Men’s SPORT Crew Neck Ultra Dry T-shirt', 'L', 1, '3070301b97.png', 36),
 (87, 113, 'Men’s SPORT Crew Neck Ultra Dry T-shirt', 'L', 1, '3070301b97.png', 36),
-(88, 114, 'GEL-KAYANO 26', '38', 1, 'fcc7998700.png', 100),
-(89, 114, 'WASHED VANS SPORT', '36', 1, 'e6d64b490b.png', 65);
+(90, 115, 'GEL-KAYANO 26', '38', 1, 'fcc7998700.png', 100),
+(91, 116, 'STAN SMITH DARK BLUE', '39', 1, 'd77e545430.jpg', 80),
+(92, 117, 'Men’s SPORT Crew Neck Ultra Dry T-shirt', 'L', 1, '3070301b97.png', 36);
 
 --
 -- Bẫy `tbl_orderdetails`
 --
-DROP TRIGGER IF EXISTS `trg_delete`;
 DELIMITER $$
 CREATE TRIGGER `trg_delete` AFTER DELETE ON `tbl_orderdetails` FOR EACH ROW UPDATE tbl_product SET tbl_product.quantity = tbl_product.quantity + old.quantity
 WHERE tbl_product.productName = old.productName AND tbl_product.size = old.size
 $$
 DELIMITER ;
-DROP TRIGGER IF EXISTS `trg_update`;
 DELIMITER $$
 CREATE TRIGGER `trg_update` BEFORE INSERT ON `tbl_orderdetails` FOR EACH ROW UPDATE tbl_product SET tbl_product.quantity = tbl_product.quantity - new.quantity
 WHERE tbl_product.productName = new.productName AND tbl_product.size = new.size
@@ -334,9 +319,8 @@ DELIMITER ;
 -- Cấu trúc bảng cho bảng `tbl_product`
 --
 
-DROP TABLE IF EXISTS `tbl_product`;
-CREATE TABLE IF NOT EXISTS `tbl_product` (
-  `productId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_product` (
+  `productId` int(11) NOT NULL,
   `productName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `catId` int(11) NOT NULL,
   `brandId` int(11) NOT NULL,
@@ -345,11 +329,8 @@ CREATE TABLE IF NOT EXISTS `tbl_product` (
   `quantity` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
   `type` int(11) NOT NULL,
-  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`productId`),
-  KEY `catId` (`catId`),
-  KEY `brandId` (`brandId`)
-) ENGINE=InnoDB AUTO_INCREMENT=134 DEFAULT CHARSET=utf8;
+  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_product`
@@ -358,7 +339,7 @@ CREATE TABLE IF NOT EXISTS `tbl_product` (
 INSERT INTO `tbl_product` (`productId`, `productName`, `catId`, `brandId`, `size`, `price`, `quantity`, `image`, `type`, `description`) VALUES
 (98, 'Men’s SPORT Crew Neck Ultra Dry T-shirt', 21, 40, 'S', 36, 500, '3070301b97.png', 1, 'An oversized crocodile brings subtle flair to this tough, ultra-dry technical jersey t-shirt. High performance, unbeatable style.'),
 (99, 'Men’s SPORT Crew Neck Ultra Dry T-shirt', 21, 40, 'M', 36, 500, '3070301b97.png', 1, 'An oversized crocodile brings subtle flair to this tough, ultra-dry technical jersey t-shirt. High performance, unbeatable style.'),
-(100, 'Men’s SPORT Crew Neck Ultra Dry T-shirt', 21, 40, 'L', 36, 498, '3070301b97.png', 1, 'An oversized crocodile brings subtle flair to this tough, ultra-dry technical jersey t-shirt. High performance, unbeatable style.'),
+(100, 'Men’s SPORT Crew Neck Ultra Dry T-shirt', 21, 40, 'L', 36, 497, '3070301b97.png', 1, 'An oversized crocodile brings subtle flair to this tough, ultra-dry technical jersey t-shirt. High performance, unbeatable style.'),
 (101, 'Men’s SPORT Crew Neck Ultra Dry T-shirt', 21, 40, 'XL', 36, 500, '3070301b97.png', 1, 'An oversized crocodile brings subtle flair to this tough, ultra-dry technical jersey t-shirt. High performance, unbeatable style.'),
 (102, 'T-Clip Leather Sneakers', 26, 40, '35', 77, 2000, 'dd6e2cca70.png', 0, 'This sneaker delivers an urban aesthetic, combining Lacoste’s signature Sideline silhouette with 80s detailing. Uppers crafted from a mix of premium leather, suede and mesh panels, are executed in sport-inspired shades. Perforations elevate the look further, referencing the tennis court. The crocodile appears embossed on the quarter and Lacoste lettered branding on the tongue and heel adds signature flair.'),
 (103, 'T-Clip Leather Sneakers', 26, 40, '36', 77, 200, 'dd6e2cca70.png', 0, 'This sneaker delivers an urban aesthetic, combining Lacoste’s signature Sideline silhouette with 80s detailing. Uppers crafted from a mix of premium leather, suede and mesh panels, are executed in sport-inspired shades. Perforations elevate the look further, referencing the tennis court. The crocodile appears embossed on the quarter and Lacoste lettered branding on the tongue and heel adds signature flair.'),
@@ -373,7 +354,7 @@ INSERT INTO `tbl_product` (`productId`, `productName`, `catId`, `brandId`, `size
 (112, 'GEL-KAYANO 27', 26, 34, '36', 160, 200, '66182f375e.png', 0, 'Enjoy excellent comfort and advanced support with the GEL-KAYANO® 27 running shoe. The redesigned mesh upper helps keep feet cool, while the sole is more flexible to help promote a more natural roll through the gait cycle. This starts in the heel with added flex grooves that assist in isolating initial impact to force a softer and smoother feeling at footstrike. At midstance, the foot should stop pronating and re-supinate for an efficient toe-off. To help this natural motion, we incorporate DYNAMIC DUOMAX® technology to help support the foot and increase stability for runners whose feet roll inward too much (overpronate). The midsole also integrates SPACE TRUSSTIC™ technology, which provides stability and reduces the overall weight to help promote a smoother transition from foot strike to toe-off. This added stability is complemented by deeper forefoot flex grooves for a smoother roll through toe-off, allowing the shoe to move more naturally with the foot. Lastly, a large section of reflective materials in the rearfoot helps keep runners visible when running in low-light conditions. The GEL-KAYANO® 27 model is an excellent choice for both competitive and noncompetitive runners looking for an everyday trainer that combines comfort with support.'),
 (113, 'GEL-KAYANO 27', 26, 34, '43', 160, 200, '66182f375e.png', 0, 'Enjoy excellent comfort and advanced support with the GEL-KAYANO® 27 running shoe. The redesigned mesh upper helps keep feet cool, while the sole is more flexible to help promote a more natural roll through the gait cycle. This starts in the heel with added flex grooves that assist in isolating initial impact to force a softer and smoother feeling at footstrike. At midstance, the foot should stop pronating and re-supinate for an efficient toe-off. To help this natural motion, we incorporate DYNAMIC DUOMAX® technology to help support the foot and increase stability for runners whose feet roll inward too much (overpronate). The midsole also integrates SPACE TRUSSTIC™ technology, which provides stability and reduces the overall weight to help promote a smoother transition from foot strike to toe-off. This added stability is complemented by deeper forefoot flex grooves for a smoother roll through toe-off, allowing the shoe to move more naturally with the foot. Lastly, a large section of reflective materials in the rearfoot helps keep runners visible when running in low-light conditions. The GEL-KAYANO® 27 model is an excellent choice for both competitive and noncompetitive runners looking for an everyday trainer that combines comfort with support.'),
 (114, 'GEL-CUMULUS 22', 26, 34, '41', 120, 20, '1e5c47278b.png', 0, 'The GEL-CUMULUS® 22 running shoe is a recommended choice for neutral runners who want a soft, flexible everyday trainer with a great fit. This update features a one-piece upper mesh that\'s combined with a seamless 3D print construction, which balances support and comfort around the foot — giving you an excellent fit right out of the box. The FLYTEFOAM® technology midsole is softer than the previous version to promote a pillowy ride. Under heel where the foot first hits the ground has been redesigned to better isolate impact. This new heel design has deeper forefoot flex grooves and a softer midsole foam to give you a soft ride. A hard-wearing AHAR® rubber outsole compound has been placed in key contact areas to help the GEL-CUMULUS® 22 shoe stand up to a ton of miles.'),
-(115, 'GEL-KAYANO 26', 26, 34, '38', 100, 199, 'fcc7998700.png', 1, 'Enjoy luxurious comfort and improved bounce with the men\'s GEL-KAYANO® 26 running shoe, featuring GEL® technology to the forefoot and rear for high-density shock absorption and a comfortable feel over long distances. Featuring a jacquard mesh upper and FLYTEFOAM® Propel technology for a lightweight quality that allows your feet to breathe, this ASICS running shoe is all about going the distance, providing exceptional support and comfort over long periods of time. The EVA sockliner offers excellent rebound and cushioning, while the Guidance TRUSSTIC SYSTEM® technology brings a new level of stability, working with the contoured midsole to help control torsion. Meanwhile, the SpEVA 45 lasting improves bounce-back characteristics to put a spring in your step (quite literally). '),
+(115, 'GEL-KAYANO 26', 26, 34, '38', 100, 198, 'fcc7998700.png', 1, 'Enjoy luxurious comfort and improved bounce with the men\'s GEL-KAYANO® 26 running shoe, featuring GEL® technology to the forefoot and rear for high-density shock absorption and a comfortable feel over long distances. Featuring a jacquard mesh upper and FLYTEFOAM® Propel technology for a lightweight quality that allows your feet to breathe, this ASICS running shoe is all about going the distance, providing exceptional support and comfort over long periods of time. The EVA sockliner offers excellent rebound and cushioning, while the Guidance TRUSSTIC SYSTEM® technology brings a new level of stability, working with the contoured midsole to help control torsion. Meanwhile, the SpEVA 45 lasting improves bounce-back characteristics to put a spring in your step (quite literally). '),
 (116, 'OLD SKOOL PRO', 26, 16, '37', 65, 22, '0846299bf7.png', 0, 'The Old Skool Pro, a Vans classic upgraded for enhanced performance, features sturdy canvas and suede uppers, single-wrap foxing tape, enhanced footbeds for superior cushioning and impact protection, and Vans original waffle outsoles made of a rubber that offers grip and support. The Old Skool Pro also includes DURACAP reinforcement rubber underlays in high wear areas for unrivaled durability, and Pro Vulc Lite construction to deliver the best in boardfeel, flex, and traction.'),
 (117, 'OLD SKOOL PRO', 26, 16, '39', 65, 20, '0846299bf7.png', 0, 'The Old Skool Pro, a Vans classic upgraded for enhanced performance, features sturdy canvas and suede uppers, single-wrap foxing tape, enhanced footbeds for superior cushioning and impact protection, and Vans original waffle outsoles made of a rubber that offers grip and support. The Old Skool Pro also includes DURACAP reinforcement rubber underlays in high wear areas for unrivaled durability, and Pro Vulc Lite construction to deliver the best in boardfeel, flex, and traction.'),
 (118, 'OLD SKOOL PRO', 26, 16, '43', 65, 10, '0846299bf7.png', 0, 'The Old Skool Pro, a Vans classic upgraded for enhanced performance, features sturdy canvas and suede uppers, single-wrap foxing tape, enhanced footbeds for superior cushioning and impact protection, and Vans original waffle outsoles made of a rubber that offers grip and support. The Old Skool Pro also includes DURACAP reinforcement rubber underlays in high wear areas for unrivaled durability, and Pro Vulc Lite construction to deliver the best in boardfeel, flex, and traction.'),
@@ -390,7 +371,126 @@ INSERT INTO `tbl_product` (`productId`, `productName`, `catId`, `brandId`, `size
 (130, 'ULTRABOOST 20 BLACK', 26, 5, '42', 220, 20, '585a64a700.jpg', 1, 'CONTROL ON THE EARTH, COMFORTABLE IN EVERY STEP OF RUNNING. Every new day. Every new run. Make the most of it. This high-performance shoe features a foot-hugging knit upper. The seams in the booster are precisely positioned to create support in the right places. Soft elastane heel for a more comfortable grip. Elastic cushioning returns energy to every stride, making it feel like running forever.'),
 (131, 'Nike Air Force 1 All White', 26, 4, '38', 120, 99, '85ec88ab11.jpg', 1, 'Hoops in the park, Sunday BBQs and sunshine. The radiance lives on in the Nike Air Force 1 \'07, the b-ball OG that puts a fresh spin on the features you know best: crisp leather, stitched overlays in classic all white and the perfect amount of flash to make you shine.'),
 (132, 'COPA 20.3 FIRM GROUND', 26, 5, '41', 80, 10, '46e3bcc890.jpg', 1, 'Kick harder, win bigger. Ask for more. Line ball handling. Teammates on the same line. With this soccer cleat, both are elevated. Soft leather stitching helps keep the ball in control. Stretch mesh uppers and built-in single tongue keep your foot in place as you show off your technique. Take the game up a notch with the adidas Copa 20.3 Firm Ground soccer cleats.'),
-(133, 'STAN SMITH DARK BLUE', 26, 5, '39', 80, 20, 'd77e545430.jpg', 1, 'Previously, Stan Smith was once a big star of the tennis village. Since then, shoes bearing the name have always won boldly on the street. From top to bottom, these shoes stay true to the original 1972 gear style with the minimalist leather design and clean lines that have come to characterize this shoe line.');
+(133, 'STAN SMITH DARK BLUE', 26, 5, '39', 80, 19, 'd77e545430.jpg', 1, 'Previously, Stan Smith was once a big star of the tennis village. Since then, shoes bearing the name have always won boldly on the street. From top to bottom, these shoes stay true to the original 1972 gear style with the minimalist leather design and clean lines that have come to characterize this shoe line.');
+
+--
+-- Chỉ mục cho các bảng đã đổ
+--
+
+--
+-- Chỉ mục cho bảng `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  ADD PRIMARY KEY (`admin_User`) USING BTREE;
+
+--
+-- Chỉ mục cho bảng `tbl_brand`
+--
+ALTER TABLE `tbl_brand`
+  ADD PRIMARY KEY (`brandId`);
+
+--
+-- Chỉ mục cho bảng `tbl_cart`
+--
+ALTER TABLE `tbl_cart`
+  ADD PRIMARY KEY (`cartId`);
+
+--
+-- Chỉ mục cho bảng `tbl_category`
+--
+ALTER TABLE `tbl_category`
+  ADD PRIMARY KEY (`catId`);
+
+--
+-- Chỉ mục cho bảng `tbl_customer`
+--
+ALTER TABLE `tbl_customer`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Chỉ mục cho bảng `tbl_discount`
+--
+ALTER TABLE `tbl_discount`
+  ADD PRIMARY KEY (`id_discount`);
+
+--
+-- Chỉ mục cho bảng `tbl_imgthumb`
+--
+ALTER TABLE `tbl_imgthumb`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `tbl_order`
+--
+ALTER TABLE `tbl_order`
+  ADD PRIMARY KEY (`order_Id`);
+
+--
+-- Chỉ mục cho bảng `tbl_orderdetails`
+--
+ALTER TABLE `tbl_orderdetails`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_order` (`id_order`);
+
+--
+-- Chỉ mục cho bảng `tbl_product`
+--
+ALTER TABLE `tbl_product`
+  ADD PRIMARY KEY (`productId`),
+  ADD KEY `catId` (`catId`),
+  ADD KEY `brandId` (`brandId`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_brand`
+--
+ALTER TABLE `tbl_brand`
+  MODIFY `brandId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_cart`
+--
+ALTER TABLE `tbl_cart`
+  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=223;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_category`
+--
+ALTER TABLE `tbl_category`
+  MODIFY `catId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_discount`
+--
+ALTER TABLE `tbl_discount`
+  MODIFY `id_discount` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_imgthumb`
+--
+ALTER TABLE `tbl_imgthumb`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_order`
+--
+ALTER TABLE `tbl_order`
+  MODIFY `order_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_orderdetails`
+--
+ALTER TABLE `tbl_orderdetails`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_product`
+--
+ALTER TABLE `tbl_product`
+  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

@@ -1,4 +1,3 @@
-<!-- check out oder cart -->
 <?php ob_start();
 include 'inc/header.php';
 ?>
@@ -120,20 +119,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_buy'])) {
                             while ($result = $show_Cus->fetch_assoc()) {
 
                         ?>
-                                <!-- <div class="row">
-                            <div class="col-lg-6">
-                                <div class="checkout__input">
-                                    <p>Fist Name<span>*</span></p>
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="checkout__input">
-                                    <p>Last Name<span>*</span></p>
-                                    <input type="text">
-                                </div>
-                            </div>
-                        </div> -->
                                 <div class="checkout__input">
                                     <p>Tên khách hàng<span>*</span></p>
                                     <input type="text" name="name" value="<?php echo $result['nameCus'] ?>">
@@ -203,8 +188,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_buy'])) {
                                                                     echo "$" . $fm->format_currency($qtt);
                                                                     ?></span></div>
 
-                    <input type="submit" name="submit_buy" value="Place Order" style="margin-left: 70px; font-size: 30px;  padding: 0 10px;background:#7fad39; color: white; ">
-                    <!-- <a href="success.php"  type="submit" name="submit_buy" style="margin-left: 70px; font-size: 30px;  padding: 0 10px;background:#7fad39; color: white; ">Place Order</a> -->
+
+                    <a href="success.php" type="submit" name="submit_buy" style="margin-left: 70px; font-size: 30px;  padding: 0 10px;background:#7fad39; color: white; ">Place Order</a>
                 </div>
             </div>
                 </div>

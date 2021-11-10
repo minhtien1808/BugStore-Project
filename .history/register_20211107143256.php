@@ -13,6 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
     $insert_Customer = $user->insert_Customer($_POST);
 }
 ?>
+<script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="js/tiny-mce/jquery.tinymce.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- <section class="hero hero-normal">
     <div class="container">
         <div class="row">
@@ -74,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
                         <div class="checkout__input">
                             <p>Tài khoản<span>*</span></p>
                             <input type="text" name="username" placeholder="Enter Username">
-
+                            <?php htmlentities() ?>
                         </div>
                         <div class="checkout__input">
                             <p> họ và tên<span>*</span></p>
@@ -121,9 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 
 </section>
 
-<script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript" charset="utf-8" async defer></script>
-<script src="js/tiny-mce/jquery.tinymce.js" type="text/javascript"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 <?php
 include 'inc/footer.php';
 

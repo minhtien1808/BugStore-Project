@@ -1,18 +1,21 @@
-<?php ob_start();
+<?php  ob_start();
 include 'inc/header.php';
 ?>
-<?php
+<?php 
 $check = Session::get('customer_login');
-if ($check == true) {
-    header('Location:index.php');
-}
-?>
+    if($check== true){
+        header('Location:index.php');
+    }
+ ?>
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
-    $insert_Customer = $user->insert_Customer($_POST);
+if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])){
+    $insert_Customer=$user->insert_Customer($_POST);
 }
 ?>
+ <script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript" charset="utf-8" async defer></script>
+                    <script src="js/tiny-mce/jquery.tinymce.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- <section class="hero hero-normal">
     <div class="container">
         <div class="row">
@@ -35,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
                     <h2>Đăng ký</h2>
                     <div class="breadcrumb__option">
                         <a href="./index.php">Trang chủ</a>
-
+                      
                     </div>
                 </div>
             </div>
@@ -46,14 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 <!-- Checkout Section Begin -->
 <section class="checkout spad">
     <div class="container">
-
+        
         <div class="checkout__form">
             <h4>Đăng ký tài khoản</h4>
-            <center>
-                <h3><?php if (isset($insert_Customer)) {
-                        echo $insert_Customer;
-                    } ?></h3>
-            </center>
+            <center><h3><?php if (isset($insert_Customer)) {
+            echo $insert_Customer;
+
+      } ?></h3></center>
             <form action="register.php" method="post">
                 <div class="row">
                     <div class="modal-body">
@@ -74,7 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
                         <div class="checkout__input">
                             <p>Tài khoản<span>*</span></p>
                             <input type="text" name="username" placeholder="Enter Username">
-
                         </div>
                         <div class="checkout__input">
                             <p> họ và tên<span>*</span></p>
@@ -101,30 +102,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
                                     <input type="text" name="email" placeholder="Enter Email">
                                 </div>
                             </div>
-
+                            
                         </div>
 
-                        <div class="checkout__input">
-                            <p>Địa chỉ<span>*</span></p>
-                            <input type="text" name="address" placeholder="Enter Address">
-                        </div>
-
+                                <div class="checkout__input">
+                                    <p>Địa chỉ<span>*</span></p>
+                                    <input type="text" name="address" placeholder="Enter Address">
+                                </div>
+                           
                         <td>
-
-                            <center><button style="width: 100%;" type="submit" class="site-btn" name="register">Đăng ký</button></center>
+                        	
+                        <center><button style="width: 100%;" type="submit" class="site-btn" name="register">Đăng ký</button></center>
                         </td>
-                    </div>
-
-            </form>
+                    </div>  	
+                    
+                </form>
+            </div>
         </div>
-    </div>
+        
+    </section>
+    
 
-</section>
-
-<script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript" charset="utf-8" async defer></script>
-<script src="js/tiny-mce/jquery.tinymce.js" type="text/javascript"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<?php
-include 'inc/footer.php';
-
-ob_end_flush(); ?>
+    <?php
+    include 'inc/footer.php';
+    
+    ob_end_flush();?>

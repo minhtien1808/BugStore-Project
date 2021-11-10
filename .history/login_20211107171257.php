@@ -70,6 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 
   .container {
     padding: 16px;
+    ;
     text-align: center;
     font-size: 15px;
   }
@@ -91,8 +92,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     }
   }
 </style>
+
+
+
 <body>
-<<<<<<< HEAD
 
 
 

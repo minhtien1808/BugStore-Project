@@ -18,7 +18,7 @@ class Format
       $text = $text . ".....";
       return $text;
    }
-   // fix CSRF
+   // fix cs
    public function validation($data)
    {
       $data = trim($data);

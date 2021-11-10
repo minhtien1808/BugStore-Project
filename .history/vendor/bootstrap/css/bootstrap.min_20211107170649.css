@@ -8417,6 +8417,7 @@ a.text-warning:hover {
 
 .text-danger {
     color: #dc3545!important;
+    display: block;
 }
 
 a.text-danger:focus,

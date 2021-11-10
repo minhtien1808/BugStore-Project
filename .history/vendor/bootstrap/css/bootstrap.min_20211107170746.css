@@ -8462,5 +8462,10 @@ a.text-dark:hover {
     visibility: hidden!important
 }
 
+.text-danger {
+    color: #dc3545!important;
+    display: block;
+}
+
 
 /*# sourceMappingURL=bootstrap.min.css.map */
