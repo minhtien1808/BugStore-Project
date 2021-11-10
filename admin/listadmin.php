@@ -10,11 +10,9 @@ include('includes/navbar.php');
   $check = Session::get('level');
   //Add admin
   if($_SERVER['REQUEST_METHOD'] == 'POST'  && isset($_POST['registerbtn'])  ){
-
         $insertadmin = $admin->insert_Admin($_POST);
     }
-
-
+    //Delete_admin
     if(isset($_POST["delete_id"])){
     $id = $_POST["delete_id"];
         $deladmin = $admin->delete_Admin($id);
