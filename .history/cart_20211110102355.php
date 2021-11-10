@@ -1,6 +1,6 @@
 <?php ob_start();
 include 'inc/header.php';
-// add cart
+
 ?>
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['discount'])) {
@@ -63,7 +63,6 @@ if (!isset($_GET['id'])) {
         background-color: #3e8e41;
         box-shadow: 0 5px #666;
         transform: translateY(4px);
-<<<<<<< HEAD
 
     }
 
@@ -84,19 +83,6 @@ if (!isset($_GET['id'])) {
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
-
-
-    }
-
-    input.styling {
-        background-color: #7FAD39;
-        border: none;
-        color: white;
-        padding: 7px 12px;
-        text-decoration: none;
-        margin: 4px 2px;
-        cursor: pointer;
-    }
 
             </div>
             <div class="col-lg-9">
@@ -137,8 +123,7 @@ if (!isset($_GET['id'])) {
                 <div class="breadcrumb__text">
                     <h2>Shopping Cart</h2>
                     <div class="breadcrumb__option">
-                        <a href="./index.php">Home</a>
-
+                        <a href="./index.html">Home</a>
                         <span>Shopping Cart</span>
                     </div>
                 </div>
@@ -189,6 +174,7 @@ if (!isset($_GET['id'])) {
                                             <?php echo $result['size'] ?>
                                         </td>
                                         <td class="shoping__cart__quantity">
+                                            // edit number cart products
                                             <form action="" method="post">
                                                 <div class="quantity">
                                                     <div class="pro-qty">
@@ -208,9 +194,6 @@ if (!isset($_GET['id'])) {
                                             $sl += $result['quantity'];
                                             ?>
                                         </td>
-
-                                        // delete cart
-
                                         <td class="shoping__cart__item__close">
                                             <!-- <span class="icon_close"></span> -->
                                         <td><a onclick="return confirm('Bạn có muốn xóa?')" href="?delid=<?php echo $result['cartId'] ?>">X</a></td>
