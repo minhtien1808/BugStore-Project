@@ -44,8 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     cursor: pointer;
     width: 455px;
     position: relative;
-    left: 26%;
-    transform: translateX(-50%);
+    left: 50%;
+    transform: translateX(-103%);
   }
 
   button:hover {
@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
   }
 </style>
 <body>
-<<<<<<< HEAD
+
 
 
 
@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
       }
       ?>
       <br>
-      <button type="submit" name="login">Login</button>
+      <button type="submit" name="login">Đăng Nhập</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Lưu tài khoản
       </label>
