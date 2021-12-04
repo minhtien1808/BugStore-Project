@@ -81,7 +81,7 @@ include('includes/navbar.php');
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary">Danh Sách Khuyến Mãi 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-              Thêm Chương Trình Khuyễn Mãi
+              Thêm Chương Trình
             </button>
     </h6>
   </div>
@@ -117,8 +117,8 @@ include('includes/navbar.php');
              <td> <?php echo $result['discount']; ?>%</td>
             
             <td>
-              
-            <form action="" method="post">
+              //XÓA
+                <form action="" method="post">
                   <input type="hidden" name="delete_id" value="<?php echo $result['id_discount']?>">
                   <button  type="submit" name="delete_btn" class="btn btn-danger">Xóa</button>
                 </form>
