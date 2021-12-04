@@ -8,7 +8,7 @@ include('includes/navbar.php');
 
 <?php 
     $brand = new brand();
-    if(!isset($_GET['brandid']) || $_GET['brandid']==NULL){
+    if(!isset($_GET['brandid']) || $_GET['brandid'] ==NULL){
         echo "<script>window.location = 'brandlist.php'</script>";
         
     }else{
@@ -75,7 +75,7 @@ include('includes/navbar.php');
                 <form action="" method="post">
                    
                      <input type="hidden" name="edit" value="<?php echo $result['brandId']?>">
-                    <button  type="submit" name="edit_btn" class="btn btn-success" >SAVE</button>
+                    <button  type="submit" name="edit_btn"   class="btn btn-success" > SAVE</button>
                 </form>
             </td>
             
