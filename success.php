@@ -1,3 +1,4 @@
+<!-- by Minh Tien -->
 <?php
 include 'inc/header.php';
 ?>
