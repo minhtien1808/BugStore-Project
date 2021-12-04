@@ -1,3 +1,5 @@
+<!-- by Minh Tien -->
+
 <?php ob_start();
 include 'inc/header.php';
 
