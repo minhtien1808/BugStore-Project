@@ -117,6 +117,7 @@ include('includes/navbar.php');
              <td> <?php echo $result['discount']; ?>%</td>
             
             <td>
+              //XÓA
                 <form action="" method="post">
                   <input type="hidden" name="delete_id" value="<?php echo $result['id_discount']?>">
                   <button  type="submit" name="delete_btn" class="btn btn-danger">Xóa</button>
