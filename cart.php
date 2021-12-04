@@ -237,6 +237,7 @@ if (!isset($_GET['id'])) {
             <div class="col-lg-6">
                 <div class="shoping__continue">
                     <div class="shoping__discount">
+                        <!-- by Minh Tien -->
                         <h5>Discount Codes</h5>
                         <form action="" method="post">
                             <input type="text" name="codediscount" placeholder="Enter your coupon code">
