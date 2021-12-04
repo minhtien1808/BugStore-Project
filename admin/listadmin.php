@@ -8,14 +8,11 @@ include('includes/navbar.php');
 <?php 
   $admin = new admin();
   $check = Session::get('level');
+  //Add admin
   if($_SERVER['REQUEST_METHOD'] == 'POST'  && isset($_POST['registerbtn'])  ){
-
-       
-
         $insertadmin = $admin->insert_Admin($_POST);
     }
-
-
+    //Delete_admin
     if(isset($_POST["delete_id"])){
     $id = $_POST["delete_id"];
         $deladmin = $admin->delete_Admin($id);
@@ -156,7 +153,7 @@ include('includes/navbar.php');
             <td>
                 <form action="" method="post">
                   <input type="hidden" name="delete_id" value="<?php echo $result['admin_User']; ?>">
-                  <button type="submit" name="delete_btn" class="btn btn-danger"> Xóa Nhân Viên</button>
+                  <button type="submit" name="delete_btn" class="btn btn-danger"> Xóa Nhân Viên  </button>
                 </form>
             </td>
           </tr>
@@ -173,7 +170,11 @@ include('includes/navbar.php');
 
 </div>
 <!-- /.container-fluid -->
-
+    <script >
+        function xoanv{
+            alert("Chắc chắc bạn muốn xóa");
+        }
+    </script>
 <?php
 include('includes/scripts.php');
 include('includes/footer.php');
