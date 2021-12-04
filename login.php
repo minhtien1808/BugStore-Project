@@ -44,8 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     cursor: pointer;
     width: 455px;
     position: relative;
-    left: 50%;
-    transform: translateX(-103%);
+    left: 26%;
+    transform: translateX(-50%);
   }
 
   button:hover {
@@ -91,8 +91,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     }
   }
 </style>
-
 <body>
+
 
 
 
