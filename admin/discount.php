@@ -81,7 +81,7 @@ include('includes/navbar.php');
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary">Danh Sách Khuyến Mãi 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-              Thêm Chương Trình
+              Thêm Chương Trình Khuyễn Mãi
             </button>
     </h6>
   </div>
