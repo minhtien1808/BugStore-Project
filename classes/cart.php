@@ -156,6 +156,12 @@
 			$alert = "<span>Xóa thàh công</span";
 			return $alert;
 		}
+		public function edit_Discount($id){
+			$query = "DELETE FROM tbl_discount WHERE id_discount = '$id' ";
+			$result = $this->db->edit($query);
+			$alert = "<span>Sửa thàh công</span";
+			return $alert;
+		}
 		public function get_Discount($code){
 			
 			$query = "SELECT * FROM tbl_discount WHERE code = '$code'";
